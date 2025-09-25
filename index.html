@@ -80,10 +80,11 @@
                 <!-- Vídeos lado a lado -->
                 <!-- Vídeos lado a lado -->
                 <div class="video-grid" style="margin-bottom:16px">
-                    <iframe src="https://www.youtube-nocookie.com/embed/vAVkg9kWGxw?rel=0&modestbranding=1"
-                        title="Exemplo de automação 1" loading="lazy"
+                    <iframe src="https://www.youtube.com/embed/vAVkg9kWGxw?start=1" title="Exemplo de automação 1"
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
 
                     <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2?rel=0&modestbranding=1"
                         title="Exemplo de automação 2" loading="lazy"
@@ -221,7 +222,6 @@
             <div class="grid" style="grid-template-columns:1fr 1fr;gap:24px">
                 <!-- Formulário integrado ao Formspree -->
                 <form class="card" id="form-contato" action="https://formspree.io/f/xeorqpjk" method="POST">
-
                     <label>Nome<br>
                         <input type="text" name="nome" required placeholder="Seu nome" />
                     </label>
@@ -239,18 +239,17 @@
                             placeholder="Descreva o que hoje é manual e onde quer chegar"></textarea>
                     </label>
 
-                    <!-- Campos ocultos opcionais -->
-                    <input type="hidden" name="_subject" value="Novo contato - Automação Pro">
-                    <<<<<<< HEAD <input type="hidden" name="_redirect" value="https://seudominio.com/obrigado.html">
+                    <!-- Redirecionamento após envio -->
+                    <input type="hidden" name="_redirect"
+                        value="https://ghenriquediniz.github.io/Site_Automatiza/obrigado.html">
 
-                        =======
-                        <input type="hidden" name="_redirect"
-                            value="https://ghenriquediniz.github.io/Site_Automatiza/obrigado.html">
-                        >>>>>>> 3a76db4 (init versao 2)
-                        <div style="display:flex;gap:10px;align-items:center">
-                            <button class="btn" type="submit">Enviar</button>
-                            <span id="form-status" class="muted" role="status" aria-live="polite"></span>
-                        </div>
+                    <!-- reCAPTCHA checkbox (SITE KEY pública aqui) -->
+                    <div class="g-recaptcha" data-sitekey="6Ler4dQrAAAAAMmdTo95shoh4_P2W_ef1ZldoJL"></div>
+
+                    <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+                        <button class="btn" type="submit">Enviar</button>
+                        <span id="form-status" class="muted" role="status" aria-live="polite"></span>
+                    </div>
                 </form>
 
                 <aside class="card">
@@ -262,6 +261,9 @@
                 </aside>
             </div>
         </div>
+
+        <!-- Script do reCAPTCHA (fora do form) -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </section>
 
     <footer>
